@@ -1,7 +1,7 @@
 [package]
 name = "tile_spec"
 version = "0.0.1"
-edition = "2021"
+edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "tile-rs executable Gherkin (Given/When/Then) spec layer: .feature use cases mapped 1:1 to step definitions that drive the open CodegenTarget trait + registry and the 14 open MLIR->source emitters. Std-only, zero external deps (offline-vendored-registry friendly)."
 

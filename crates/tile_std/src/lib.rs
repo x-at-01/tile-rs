@@ -19,7 +19,6 @@
     allow_internal_unstable,
     doc_notable_trait,
     prelude_import,
-    never_type,
     min_specialization,
     generic_const_exprs,
     register_tool
@@ -73,7 +72,7 @@ pub struct L0bBuf(u32);
 #[repr(transparent)]
 pub struct L0cBuf(u32);
 
-extern "C" {
+unsafe extern "C" {
     // Block/sub-block index queries
     pub fn get_block_idx() -> usize;
     pub fn get_block_num() -> usize;

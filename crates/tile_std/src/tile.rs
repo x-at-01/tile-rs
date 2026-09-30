@@ -168,7 +168,7 @@ impl<'a> GmDeviceCtx<'a> {
 
 // --- f32 tile operations --------------------------------------------------
 
-extern "C" {
+unsafe extern "C" {
     /// Load a `ROWS × COLS` f32 tile from global memory into a local tile buffer.
     ///
     /// In the AscendC path: `DataCopy(local_buf, gm_ptr, ROWS * COLS)`.
@@ -4195,7 +4195,7 @@ extern "C" {
 
 // --- f16 tile operations --------------------------------------------------
 
-extern "C" {
+unsafe extern "C" {
     /// Load a `ROWS × COLS` f16 tile from global memory (stored as u16).
     pub fn __tile_load_f16(gm: *const u16, rows: u32, cols: u32) -> u32;
 
@@ -4356,7 +4356,7 @@ extern "C" {
 // `depth` is the pipeline depth (2 = double-buffered, 3 = triple, etc.).
 // `depth == 1` is an explicit opt-out of pipelining on this loop.
 
-extern "C" {
+unsafe extern "C" {
     #[doc(hidden)]
     pub fn __tile_pipelined_for_begin(depth: u32);
     #[doc(hidden)]

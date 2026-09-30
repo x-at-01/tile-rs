@@ -1,7 +1,7 @@
 [package]
 name = "tile_cli"
 version = "0.0.1"
-edition = "2021"
+edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "tile — the tile-rs kernel swissknife: identify, profile, lower, lift and optimize accelerator kernels across 16 backends from one command."
 

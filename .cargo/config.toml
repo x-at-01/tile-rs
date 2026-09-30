@@ -1,2 +1,6 @@
 [build]
 incremental = false
+
+[env]
+DEVELOPER_DIR = "/Library/Developer/CommandLineTools"
+

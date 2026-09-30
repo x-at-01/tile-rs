@@ -2022,7 +2022,7 @@ pub mod fmt {
     mod rt {
         use super::*;
 
-        extern "C" {
+        unsafe extern "C" {
             type Opaque;
         }
 
@@ -4129,7 +4129,7 @@ pub mod builtins {
 
     /// Software expf: exp(x) for f32.
     /// Range reduction + polynomial approximation.
-    #[no_mangle]
+    #[unsafe(no_mangle)]
     pub extern "C" fn expf(x: f32) -> f32 {
         const LN2_HI: f32 = 6.931_457_5e-1; // high bits of ln(2)
         const LN2_LO: f32 = 1.428_606_8e-6; // low bits of ln(2)
@@ -4178,7 +4178,7 @@ pub mod builtins {
 
     /// Software logf: ln(x) for f32.
     /// Decomposes x = 2^e * m, then polynomial on reduced range.
-    #[no_mangle]
+    #[unsafe(no_mangle)]
     pub extern "C" fn logf(x: f32) -> f32 {
         const LN2: f32 = 0.693_147_18;
 
@@ -4220,7 +4220,7 @@ pub mod builtins {
 
     /// Software sqrtf: sqrt(x) for f32.
     /// Bit-manipulation initial guess + Newton-Raphson iterations.
-    #[no_mangle]
+    #[unsafe(no_mangle)]
     pub extern "C" fn sqrtf(x: f32) -> f32 {
         let bits = f32_to_bits(x);
 

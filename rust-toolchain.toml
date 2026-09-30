@@ -1,3 +1,8 @@
+# Latest nightly toolchain. Dated channel chosen deliberately: rustc-dev
+# (compiler-internal) APIs drift between nightlies, and concurrent rustup
+# installs on this machine race with unpinned downloads. Re-evaluate unpinning
+# when those settle; bump the date to pull a newer nightly.
 [toolchain]
-channel = "nightly-2025-08-04"
-components = ["rustc", "cargo", "clippy", "llvm-tools", "rust-src", "rustc-dev", "rustfmt", "rust-analyzer", "miri"]
+channel = "nightly"
+components = ["rustc", "cargo", "clippy", "rustfmt"]
+
