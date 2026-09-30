@@ -4461,7 +4461,7 @@ pub fn tile_scalar_mod(a: u32, b: u32) -> u32 {
 /// The result must stay within the allocation.
 #[inline(always)]
 pub unsafe fn tile_offset_ptr_f32(gm: *const f32, elems: u32) -> *const f32 {
-    __tile_offset_ptr_f32(gm, elems)
+    unsafe { __tile_offset_ptr_f32(gm, elems) }
 }
 
 /// Load an f32 tile whose rows are `ROW_STRIDE` elements apart.

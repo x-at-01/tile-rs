@@ -1,8 +1,6 @@
-# Latest nightly toolchain. Dated channel chosen deliberately: rustc-dev
-# (compiler-internal) APIs drift between nightlies, and concurrent rustup
-# installs on this machine race with unpinned downloads. Re-evaluate unpinning
-# when those settle; bump the date to pull a newer nightly.
+# Latest nightly. rustc_codegen_tile (workspace-excluded) compiles against
+# rustc-dev compiler-internal APIs; if a fresh nightly breaks it, fix the drift
+# in-tree rather than re-pinning the date here.
 [toolchain]
 channel = "nightly"
-components = ["rustc", "cargo", "clippy", "rustfmt"]
 
